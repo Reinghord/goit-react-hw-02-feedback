@@ -12,13 +12,8 @@ class App extends Component {
   };
 
   onHandleClick = e => {
-    if (e.target.attributes.option.value === 'good') {
-      this.setState({ good: this.state.good + 1 });
-    } else if (e.target.attributes.option.value === 'neutral') {
-      this.setState({ neutral: this.state.neutral + 1 });
-    } else if (e.target.attributes.option.value === 'bad') {
-      this.setState({ bad: this.state.bad + 1 });
-    }
+    const { value } = e.target.attributes.option;
+    this.setState({ [value]: this.state[value] + 1 });
   };
 
   countTotalFeedback() {
