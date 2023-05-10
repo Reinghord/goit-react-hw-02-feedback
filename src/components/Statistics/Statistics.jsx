@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import s from './Statistics.module.css';
+import { List } from './Statistics.styled';
 import PropTypes from 'prop-types';
 
 class Statistics extends Component {
@@ -7,7 +7,7 @@ class Statistics extends Component {
     const { bad, good, neutral, total, positivePercentage } = this.props;
     return (
       <>
-        <ul className={s.listStats}>
+        <List>
           <li>
             Good: <span>{good}</span>
           </li>
@@ -23,7 +23,7 @@ class Statistics extends Component {
           <li>
             Positive feedback: <span>{positivePercentage + '%'}</span>
           </li>
-        </ul>
+        </List>
       </>
     );
   }

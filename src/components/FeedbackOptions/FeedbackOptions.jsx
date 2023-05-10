@@ -1,24 +1,20 @@
 import PropTypes from 'prop-types';
-import s from './FeedbackOptions.module.css';
+import { List, Item, Button } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <>
-      <ul className={s.list}>
+      <List>
         {options.map(option => {
           return (
-            <li key={option} className={s.item}>
-              <button
-                className={s.button}
-                onClick={onLeaveFeedback}
-                option={option}
-              >
+            <Item key={option}>
+              <Button onClick={onLeaveFeedback} option={option}>
                 {option}
-              </button>
-            </li>
+              </Button>
+            </Item>
           );
         })}
-      </ul>
+      </List>
     </>
   );
 };
@@ -29,4 +25,3 @@ FeedbackOptions.propTypes = {
 };
 
 export default FeedbackOptions;
-//random comment
